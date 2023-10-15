@@ -1,0 +1,194 @@
+body{
+    margin: 0;  /*избавится от отступов*/
+    padding:0;
+}
+div{
+    box-sizing: border-box;
+
+}
+/*=======================*/
+#container{
+
+    max-width: 1200px;
+    margin: 0 auto;
+    /*=======================*/
+    display: grid;
+    grid-template-columns: repeat(3,1fr);  /*  калонки */
+    gap: 10px;                            /* пустое пространство*/
+}
+#container .item:nth-child(odd){
+    background-color: green;
+}
+#container .item:nth-child(even){
+    background-color: darkred;
+}
+.item_1{
+    grid-column: 1/4;
+    background-color: orangered !important;  /*---! приоритет--*/
+}
+
+
+.item_2{
+    grid-row: 2/4;
+}
+.item_3{
+    grid-column: 2/4;
+    grid-row: 2/4;
+
+}
+.item_4{
+    grid-column: 1/4;
+    background-color: springgreen !important; /*----приоритет в цвете*/
+
+}
+.item_5{
+
+}
+.item_6{
+    grid-column: 2/4;
+}
+.item_7{
+    grid-column: 1/4;
+}
+nav{                      /* обращение к картинке*/
+
+}
+ nav .navMenu{
+background-color: rosybrown;
+     width: 50px;
+     height: 50px;
+     margin: 20px;
+     display: none;
+ }
+ nav ul{
+     background-color: #112233;
+
+
+ }
+  nav ul li{
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      text-align: center;
+      margin: 0;
+  }
+  nav ul li,
+      ul.listTown li{
+      color: yellowgreen;
+      font-size: 30px;
+      display: block;
+      padding: 20px 0;
+      transition: 0.5s;
+
+  }
+   nav ul li:hover{
+       background-color: darkred;
+       color: crimson;
+       transition: 1s;     /* время отклика */
+   }
+
+    .item_1 .galer{
+        max-width: 100%;
+    }
+  .galer{
+
+  }
+ul.listTown{
+    padding: 0;
+    list-style: none;
+    color: darkgoldenrod;
+
+}
+ ul.listTown{
+     padding: 0;
+     list-style: none;
+     color: aqua;
+ }
+
+ ul.listTown li{
+     padding-left: 13px;
+ }
+
+
+
+
+/*============1=================*/
+@media (max-width:1200px) {
+    #container{
+        max-width: 970px;
+        border: 1px solid blueviolet;
+
+    }
+}
+/*=============2================*/
+@media (max-width:992px) {
+    #container{
+        max-width: 750px;
+        border: 1px solid chartreuse;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .item_1{
+        grid-column: 1/3;
+        background-color: orange !important;  /*---! приоритет--*/
+    }
+    .item_2{
+        grid-row: 2/4;
+    }
+    .item_3{
+        grid-column: 2/3;
+        grid-row: 2/4;
+
+    }
+    .item_4{
+        grid-column: 1/3;
+        background-color: springgreen !important; /*----приоритет в цвете*/
+
+    }
+    .item_5{
+
+    }
+    .item_6{
+        grid-column: 2/3;
+    }
+    .item_7{
+
+        grid-column: 1/3;
+    }
+
+}
+/*============3=================*/
+@media (max-width:767px) {
+    #container{
+        max-width: none; /* нет пикселей*/
+        border: 1px solid  darkgoldenrod;
+        display: block;
+
+    }
+    galer{
+        max-width: 100%;
+    }
+    nav .navMenu{
+        display: block;
+    }
+    nav ul{
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
